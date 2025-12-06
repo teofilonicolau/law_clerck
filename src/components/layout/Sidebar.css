@@ -1,0 +1,232 @@
+/* ========================================
+   SIDEBAR COLAPSÁVEL - 280px / 70px
+   ======================================== */
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    display: none;
+}
+
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    z-index: 999;
+    overflow-y: auto;
+    transition: width 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+/* Sidebar Collapsed */
+.sidebar-container.collapsed {
+    width: 70px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 1rem;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-container.collapsed .sidebar-header {
+    padding: 1rem 0.5rem;
+}
+
+.sidebar-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+}
+
+.sidebar-container.collapsed .sidebar-brand {
+    display: none;
+}
+
+.sidebar-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0.5rem 0 0 0;
+    color: white;
+}
+
+.sidebar-container.collapsed .sidebar-subtitle {
+    display: none;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-section-title {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-container.collapsed .sidebar-section-title {
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    font-size: 1.2rem;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 12px 16px;
+    margin: 4px 8px;
+    border-radius: 8px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.sidebar-container.collapsed .sidebar-item {
+    justify-content: center;
+    padding: 12px 8px;
+    margin: 4px;
+}
+
+.sidebar-item:hover {
+    background: var(--sidebar-hover);
+}
+
+.sidebar-item.active {
+    background: var(--sidebar-active);
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sidebar-container.collapsed .sidebar-item span:not(.sidebar-icon) {
+    display: none;
+}
+
+/* Tooltip para ícones quando colapsado */
+.sidebar-container.collapsed .sidebar-item:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 12px var(--shadow-lg);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.sidebar-footer p {
+    margin: 0.25rem 0;
+    color: white;
+}
+
+.sidebar-powered {
+    font-size: 0.75rem;
+}
+
+.sidebar-powered strong {
+    color: #fbbf24;
+}
+
+/* Mobile - Drawer */
+@media (max-width: 1024px) {
+    .sidebar-overlay {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .sidebar-container {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-container.open {
+        transform: translateX(0);
+        width: 280px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .sidebar-container {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+    }
+}

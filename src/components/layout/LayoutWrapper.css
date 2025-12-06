@@ -1,0 +1,55 @@
+/* ========================================
+   LAYOUT WRAPPER - SIDEBAR COLAPS\u00c1VEL
+   ======================================== */
+
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-main {
+    display: flex;
+    flex: 1;
+}
+
+/* Content - Padrão com sidebar */
+.layout-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-x: hidden;
+    margin-left: 280px;
+    /* Sidebar width */
+    transition: margin-left 0.3s ease;
+}
+
+/* Content when sidebar collapsed */
+.layout-content.sidebar-collapsed {
+    margin-left: 70px;
+    /* Sidebar collapsed width */
+}
+
+/* Full width para home */
+.layout-content.full-width {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+}
+
+/* Mobile - sem margem */
+@media (max-width: 1024px) {
+    .layout-content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .layout-content.sidebar-collapsed {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-content {
+        padding: 1rem;
+    }
+}

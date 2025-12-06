@@ -1,0 +1,69 @@
+.calculation-card {
+    margin-top: 2rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.calc-header {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    padding: 1.25rem 1.5rem;
+    color: white;
+}
+
+.calc-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.calc-body {
+    padding: 1.5rem;
+}
+
+.calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.2s ease;
+}
+
+.calc-row:last-child {
+    border-bottom: none;
+}
+
+.calc-row:hover {
+    background: var(--bg-tertiary);
+}
+
+.calc-row.section-header {
+    background: var(--bg-tertiary);
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 0.5rem;
+}
+
+.calc-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.calc-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .calc-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .calc-value {
+        text-align: left;
+        width: 100%;
+    }
+}

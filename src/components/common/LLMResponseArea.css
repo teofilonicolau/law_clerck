@@ -1,0 +1,141 @@
+.llm-response-area {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow);
+    margin-top: 2rem;
+}
+
+.llm-response-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-tertiary);
+}
+
+.llm-response-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.llm-response-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn:hover:not(:disabled) {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-btn.success {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.pdf-btn:hover:not(:disabled) {
+    background: var(--error);
+    border-color: var(--error);
+}
+
+.llm-response-content {
+    padding: 2rem;
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.response-text {
+    font-family: 'Inter', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.response-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    text-align: center;
+}
+
+.response-placeholder p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.llm-response-footer {
+    padding: 1.5rem;
+    background: var(--warning-bg);
+    border-top: 1px solid var(--warning);
+}
+
+.ethics-warning {
+    color: var(--text-primary);
+}
+
+.ethics-warning strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--warning);
+}
+
+.ethics-warning p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .llm-response-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .llm-response-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .llm-response-content {
+        padding: 1rem;
+    }
+}

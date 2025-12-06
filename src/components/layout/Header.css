@@ -1,0 +1,162 @@
+/* ========================================
+   HEADER COM HAMBURGER MENU
+   ======================================== */
+
+.header {
+    background: var(--accent);
+    color: var(--text-header-footer);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+[data-theme="dark"] .header {
+    background: var(--header-bg);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hamburger-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.hamburger-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.header-title p {
+    font-size: 0.85rem;
+    margin: 0;
+    opacity: 0.9;
+    color: white;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.system-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 1rem;
+    }
+
+    .header-logo {
+        height: 40px;
+    }
+
+    .header-title h1 {
+        font-size: 1.2rem;
+    }
+
+    .header-title p {
+        display: none;
+    }
+
+    .system-status {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hamburger-btn {
+        display: flex;
+        /* Sempre visível para toggle */
+    }
+}
