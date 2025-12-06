@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Base URL da API
-const BASE_URL = 'https://tamarai-backend-production.up.railway.app/api/v1';
+// Base URL da API - usando variável de ambiente
+const BASE_URL = import.meta.env.VITE_API_URL || 'https://tamarai-backend-production.up.railway.app/api/v1';
 
 // Criar instância do Axios
 export const apiClient = axios.create({
