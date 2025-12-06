@@ -206,13 +206,15 @@ lawclerk/
 <div align="center">
 
 ### Home Page
-![Home](./docs/screenshots/home.png)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/172f01f9-4233-47d3-ad00-f50711d0b00c" />
 
 ### Gerador de Petições
-![Petições](./docs/screenshots/peticoes.png)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/51d9b476-0f53-4be2-a2c2-ee8f41a82b28" />
+
 
 ### Calculadoras Jurídicas
-![Calculadoras](./docs/screenshots/calculadoras.png)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7e7905c7-6937-4e92-98fa-588b42688bf4" />
+
 
 </div>
 
